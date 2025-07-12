@@ -1,8 +1,10 @@
-const { Schema, model } = require("mongoose")
+const mongoose = require("mongoose");
 
-const Document = new Schema({
+const documentSchema = new mongoose.Schema({
   _id: String,
   data: Object,
-})
+}, {
+  timestamps: true
+});
 
-module.exports = model("Document", Document)
+module.exports = mongoose.model("Document", documentSchema);
